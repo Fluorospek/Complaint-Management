@@ -14,7 +14,9 @@ import com.google.firebase.auth.FirebaseUser;
 public class MainActivity extends AppCompatActivity {
 
     FirebaseAuth auth;
-    Button button;
+    Button logout_btn;
+    Button register_btn;
+    Button view_btn;
     TextView textView;
     FirebaseUser user;
 
@@ -24,7 +26,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         auth=FirebaseAuth.getInstance();
-        button=findViewById(R.id.btn_logout);
+        logout_btn=findViewById(R.id.btn_logout);
+        register_btn=findViewById(R.id.btn_registercomplain);
+        view_btn=findViewById(R.id.btn_viewcomplain);
 //        textView=findViewById(R.id.user_details);
         user=auth.getCurrentUser();
         if(user==null){
@@ -36,7 +40,25 @@ public class MainActivity extends AppCompatActivity {
             textView.setText(user.getEmail());
         }
 
-        button.setOnClickListener(new View.OnClickListener() {
+        register_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getApplicationContext(),resitercomplain.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        view_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getApplicationContext(),viewcomplain.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        logout_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 FirebaseAuth.getInstance().signOut();

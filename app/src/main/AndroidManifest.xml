@@ -10,13 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Material3.Light">
         <activity
-            android:name=".registration"
-            android:theme="@style/Theme.Material3.Light.NoActionBar"
+            android:name=".viewcomplain"
             android:exported="false" />
         <activity
+            android:name=".resitercomplain"
+            android:exported="false" />
+        <activity
+            android:name=".registration"
+            android:exported="false"
+            android:theme="@style/Theme.Material3.Light.NoActionBar" />
+        <activity
             android:name=".login"
-            android:theme="@style/Theme.Material3.Light.NoActionBar"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.Material3.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,9 +31,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true" />
     </application>
 
 </manifest>
