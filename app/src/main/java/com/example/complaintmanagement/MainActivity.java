@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     Button logout_btn;
     Button register_btn;
     Button view_btn;
-    TextView textView;
+    //TextView textView;
     FirebaseUser user;
 
     @Override
@@ -36,9 +36,9 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         }
-        else{
-            textView.setText(user.getEmail());
-        }
+//        else{
+//            textView.setText(user.getEmail());
+//        }
 
         register_btn.setOnClickListener(new View.OnClickListener() {
             @Override
