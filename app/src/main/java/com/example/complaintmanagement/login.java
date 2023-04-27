@@ -70,12 +70,6 @@ public class login extends AppCompatActivity {
                     progressBar.setVisibility(View.GONE);
                     return;
                 }
-                if(TextUtils.isEmpty(email)){
-                    Toast.makeText(login.this,"Enter email",Toast.LENGTH_SHORT).show();
-                    progressBar.setVisibility(View.GONE);
-
-                    return;
-                }
 
                 mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener( new OnCompleteListener<AuthResult>() {
                             @Override

@@ -1,5 +1,7 @@
 package com.example.complaintmanagement;
 
+import androidx.activity.OnBackPressedCallback;
+import androidx.activity.OnBackPressedDispatcher;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -24,6 +26,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        OnBackPressedCallback callback=new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                Intent intent=new Intent(getApplicationContext(),login.class);
+                startActivity(intent);
+                finish();
+            }
+        };
 
         auth=FirebaseAuth.getInstance();
         logout_btn=findViewById(R.id.btn_logout);
